@@ -1,0 +1,21 @@
+{
+  "name": "dental",
+  "version": "1.0.0",
+  "description": "Ivory Dental Clinic - Static Website",
+  "private": true,
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "lint": "echo 'No linting configured for static HTML project'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "dental",
+    "clinic",
+    "vercel"
+  ],
+  "author": "",
+  "license": "ISC"
+}
