@@ -8,8 +8,17 @@
     <meta name="description"
         content="Ivory Dental Clinic — عيادة د. أيمن فاطين لزراعة وتجميل الأسنان في مدينة نصر، القاهرة. زراعة فورية، فينير، علاج جذور، وتقويم شفاف." />
 
+    <!-- Performance: Preconnect & DNS-Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+
+    <!-- Preload Critical LCP Asset -->
+    <link rel="preload" as="image" href="assets/326946801_997392401234725_5495112859786435083_n.jpg" fetchpriority="high" />
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
 
@@ -24,8 +33,6 @@
             },
         };
     </script>
-
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         *,
@@ -72,6 +79,12 @@
                 animation: none;
             }
         }
+
+        /* Performance: content-visibility skips rendering off-screen sections until scrolled */
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 650px;
+        }
     </style>
 </head>
 
@@ -90,7 +103,7 @@
             <a href="#"
                 class="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2">
                 <img src="assets/326946801_997392401234725_5495112859786435083_n.jpg" alt="Ivory Dental Clinic Logo"
-                    width="40" height="40" fetchpriority="high" class="h-10 w-10 object-contain rounded-lg" />
+                    width="40" height="40" fetchpriority="high" decoding="sync" class="h-10 w-10 object-contain rounded-lg" />
                 <div class="leading-tight">
                     <span class="block text-[15px] font-bold text-slate-800 tracking-tight">Ivory Dental Clinic</span>
                     <span class="block text-[11px] text-slate-400 -mt-0.5">د. أيمن فاطين — طب وزراعة الأسنان</span>
@@ -273,7 +286,7 @@
 
 
         <!--  BEFORE & AFTER — CASE RESULTS  -->
-        <section id="cases" class="py-20 lg:py-28 border-b border-slate-100 scroll-mt-16">
+        <section id="cases" class="cv-auto py-20 lg:py-28 border-b border-slate-100 scroll-mt-16">
             <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
                 <div class="mb-12 lg:mb-16">
@@ -286,17 +299,17 @@
                     <div class="rounded-xl overflow-hidden border border-slate-200">
                         <img src="assets/486310911_1097211532445309_1022920802773320454_n.jpg"
                             alt="حالة قبل وبعد — تبييض أسنان" width="400" height="400"
-                            class="w-full aspect-square object-cover" loading="lazy" />
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="rounded-xl overflow-hidden border border-slate-200">
                         <img src="assets/486299706_1098407172325745_3561766904646662611_n.jpg"
                             alt="حالة قبل وبعد — فينير" width="400" height="400"
-                            class="w-full aspect-square object-cover" loading="lazy" />
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="rounded-xl overflow-hidden border border-slate-200 sm:col-span-2 lg:col-span-1">
                         <img src="assets/486110404_1096513615848434_2367467578629889493_n.jpg"
                             alt="حالة قبل وبعد — علاج تحفظي" width="400" height="400"
-                            class="w-full aspect-square object-cover" loading="lazy" />
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
                     </div>
                 </div>
             </div>
@@ -304,7 +317,7 @@
 
 
         <!--  DOCTOR  -->
-        <section id="doctor" class="py-20 lg:py-28 scroll-mt-16">
+        <section id="doctor" class="cv-auto py-20 lg:py-28 scroll-mt-16">
             <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
@@ -314,7 +327,7 @@
                             class="aspect-square bg-white rounded-2xl overflow-hidden border border-slate-200 p-8 flex items-center justify-center shadow-sm">
                             <img src="assets/326946801_997392401234725_5495112859786435083_n.jpg"
                                 alt="Ivory Dental Clinic — د. أيمن فاطين" width="320" height="320"
-                                class="w-full h-full object-contain" />
+                                class="w-full h-full object-contain" loading="lazy" decoding="async" />
                         </div>
                     </div>
 
@@ -367,7 +380,7 @@
 
 
         <!--  TESTIMONIALS  -->
-        <section id="reviews" class="py-20 lg:py-28 bg-warm scroll-mt-16">
+        <section id="reviews" class="cv-auto py-20 lg:py-28 bg-warm scroll-mt-16">
             <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
                 <p class="text-[13px] font-semibold text-teal-600 mb-10 lg:mb-14">آراء مرضى العيادة</p>
@@ -418,7 +431,7 @@
 
 
         <!--  LOCATION & HOURS  -->
-        <section id="location" class="py-20 lg:py-28 scroll-mt-16">
+        <section id="location" class="cv-auto py-20 lg:py-28 scroll-mt-16">
             <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
@@ -512,8 +525,15 @@
         </svg>
     </a>
 
-
-    <script>lucide.createIcons();</script>
+    <!-- Non-blocking Deferred Scripts -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
 </body>
 
 </html>
