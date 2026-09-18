@@ -34,8 +34,10 @@
             font-family: 'Cairo', sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
         }
 
         @keyframes wa-ring {
@@ -64,18 +66,31 @@
             animation: wa-ring 2.2s ease-out infinite;
             z-index: -1;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            .wa-pulse::before {
+                animation: none;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-white text-slate-600 antialiased">
 
+    <!--  SKIP LINK  -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:right-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:text-[13px] focus:font-semibold focus:outline-none focus:ring-2 focus:ring-teal-700">
+        الانتقال إلى المحتوى الرئيسي
+    </a>
+
     <!--  HEADER  -->
     <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
         <div class="max-w-[1200px] mx-auto px-6 lg:px-8 h-[60px] flex items-center justify-between">
 
-            <a href="#" class="flex items-center gap-3">
+            <a href="#"
+                class="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2">
                 <img src="assets/326946801_997392401234725_5495112859786435083_n.jpg" alt="Ivory Dental Clinic Logo"
-                    class="h-10 w-10 object-contain rounded-lg" />
+                    width="40" height="40" fetchpriority="high" class="h-10 w-10 object-contain rounded-lg" />
                 <div class="leading-tight">
                     <span class="block text-[15px] font-bold text-slate-800 tracking-tight">Ivory Dental Clinic</span>
                     <span class="block text-[11px] text-slate-400 -mt-0.5">د. أيمن فاطين — طب وزراعة الأسنان</span>
@@ -84,14 +99,14 @@
 
             <div class="flex items-center gap-5">
                 <a href="tel:+201010963320"
-                    class="hidden sm:flex items-center gap-1.5 text-[13px] text-slate-400 hover:text-slate-700 transition-colors"
+                    class="hidden sm:flex items-center gap-1.5 text-[13px] text-slate-400 hover:text-slate-700 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
                     dir="ltr">
-                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    <i data-lucide="phone" class="w-3.5 h-3.5" aria-hidden="true"></i>
                     +20&nbsp;10&nbsp;1096&nbsp;3320
                 </a>
                 <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
-                    target="_blank"
-                    class="text-[13px] font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg px-4 py-2 transition-colors">
+                    target="_blank" rel="noopener noreferrer"
+                    class="text-[13px] font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg px-4 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2">
                     احجز موعدك
                 </a>
             </div>
@@ -99,354 +114,373 @@
     </header>
 
 
-    <!--  HERO  -->
-    <section class="pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-44 lg:pb-28 border-b border-slate-100">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+    <!--  MAIN CONTENT  -->
+    <main id="main-content">
+        <!--  HERO  -->
+        <section class="pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-44 lg:pb-28 border-b border-slate-100">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
 
-                <!-- main column -->
-                <div class="lg:col-span-7 order-1">
-                    <p class="text-[13px] font-semibold text-teal-600 mb-5">
-                        Ivory Dental Clinic — مدينة نصر، القاهرة
-                    </p>
-
-                    <h1
-                        class="text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-extrabold leading-[1.3] text-slate-900 mb-6">
-                        زراعة وتجميل<br>الأسنان
-                    </h1>
-
-                    <p class="text-[16px] sm:text-[17px] text-slate-500 leading-[1.9] max-w-[520px] mb-10">
-                        د. أيمن فاطين — طبيب متخصص في زراعة وتجميل الأسنان الفورية، الفينير، وعلاج الجذور.
-                        نستقبلكم يوميًا من السبت إلى الخميس، من ١٢ ظهرًا حتى ١٠ مساءً.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                        <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
-                            target="_blank"
-                            class="inline-flex items-center gap-2.5 bg-slate-900 hover:bg-slate-800 text-white text-[15px] font-semibold rounded-lg px-6 py-3 transition-colors">
-                            <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            احجز كشف عبر واتساب
-                        </a>
-
-                        <a href="#services"
-                            class="text-[14px] text-slate-400 hover:text-slate-600 underline underline-offset-4 decoration-slate-200 hover:decoration-slate-400 transition-colors">
-                            تصفّح الخدمات
-                        </a>
-                    </div>
-                </div>
-
-                <!-- stats strip -->
-                <div
-                    class="lg:col-span-5 order-2 border-t pt-8 lg:border-t-0 lg:pt-0 lg:border-s lg:ps-10 border-slate-200">
-                    <div class="grid grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-10">
-                        <div>
-                            <span
-                                class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none">+15</span>
-                            <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">سنة خبرة في<br
-                                    class="hidden lg:block"> زراعة الأسنان</span>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none">+12K</span>
-                            <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">حالة تم علاجها<br
-                                    class="hidden lg:block"> بنجاح</span>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none">3D</span>
-                            <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">تصوير مقطعي<br
-                                    class="hidden lg:block"> قبل كل زراعة</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--  SERVICES  -->
-    <section id="services" class="py-20 lg:py-28 bg-warm">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-
-            <div class="mb-12 lg:mb-16">
-                <p class="text-[13px] font-semibold text-teal-600 mb-2">خدمات العيادة</p>
-                <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2]">نتعامل مع كل حالة على
-                    حدة</h2>
-            </div>
-
-            <div class="border-t border-slate-200/80">
-
-                <!-- 01 -->
-                <div class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
-                    <div class="lg:col-span-1 flex items-center">
-                        <i data-lucide="crosshair" class="w-8 h-8 text-teal-600 stroke-[1.75]"></i>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">زراعة الأسنان الفورية</h3>
-                    </div>
-                    <div class="lg:col-span-8">
-                        <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
-                            نستخدم أشعة CBCT لتخطيط موضع الزرعة بدقة قبل الجلسة. في أغلب الحالات بيتم تركيب السن المؤقت
-                            في نفس اليوم — بدون جراحة تقليدية وبدون غرز.
+                    <!-- main column -->
+                    <div class="lg:col-span-7 order-1">
+                        <p class="text-[13px] font-semibold text-teal-600 mb-5">
+                            Ivory Dental Clinic — مدينة نصر، القاهرة
                         </p>
-                    </div>
-                </div>
 
-                <!-- 02 -->
-                <div class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
-                    <div class="lg:col-span-1 flex items-center">
-                        <i data-lucide="sparkles" class="w-8 h-8 text-teal-600 stroke-[1.75]"></i>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">تبييض وهوليود سمايل</h3>
-                    </div>
-                    <div class="lg:col-span-8">
-                        <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
-                            قشور خزفية (فينير) بنصممها حسب شكل الوش والأسنان. النتيجة طبيعية — مش أبيض زيادة عن اللزوم.
-                            بنتجنب برد الأسنان المفرط علشان نحافظ عليها.
+                        <h1
+                            class="text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-extrabold leading-[1.3] text-slate-900 mb-6 text-balance">
+                            زراعة وتجميل<br>الأسنان
+                        </h1>
+
+                        <p class="text-[16px] sm:text-[17px] text-slate-500 leading-[1.9] max-w-[520px] mb-10">
+                            د. أيمن فاطين — طبيب متخصص في زراعة وتجميل الأسنان الفورية، الفينير، وعلاج الجذور.
+                            نستقبلكم يوميًا من السبت إلى الخميس، من ١٢ ظهرًا حتى ١٠ مساءً.
                         </p>
-                    </div>
-                </div>
 
-                <!-- 03 -->
-                <div class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
-                    <div class="lg:col-span-1 flex items-center">
-                        <i data-lucide="heart-pulse" class="w-8 h-8 text-teal-600 stroke-[1.75]"></i>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">علاج الجذور بدون ألم</h3>
-                    </div>
-                    <div class="lg:col-span-8">
-                        <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
-                            علاج عصب بالمجهر الرقمي — الجلسة في الغالب بتكون واحدة. التخدير الموضعي بيخلي الإجراء مريح
-                            تمامًا، ومعظم المرضى بيتفاجأوا إنهم مش حاسين بحاجة.
-                        </p>
-                    </div>
-                </div>
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                            <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
+                                target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2.5 bg-slate-900 hover:bg-slate-800 text-white text-[15px] font-semibold rounded-lg px-6 py-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+                                <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                احجز كشف عبر واتساب
+                            </a>
 
-                <!-- 04 -->
-                <div class="py-8 lg:py-10 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
-                    <div class="lg:col-span-1 flex items-center">
-                        <i data-lucide="smile" class="w-8 h-8 text-teal-600 stroke-[1.75]"></i>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">تقويم الأسنان الشفاف</h3>
-                    </div>
-                    <div class="lg:col-span-8">
-                        <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
-                            تقويم شفاف غير مرئي — بديل عملي للأسلاك المعدنية، خصوصًا للكبار. بيتشال وقت الأكل والتنظيف،
-                            والنتيجة بتبان بعد أسابيع قليلة.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--  BEFORE & AFTER — CASE RESULTS  -->
-    <section id="cases" class="py-20 lg:py-28 border-b border-slate-100">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-
-            <div class="mb-12 lg:mb-16">
-                <p class="text-[13px] font-semibold text-teal-600 mb-2">من شغل العيادة</p>
-                <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2]">نتائج حقيقية لحالات
-                    حقيقية</h2>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-                <div class="rounded-xl overflow-hidden border border-slate-200">
-                    <img src="assets/486310911_1097211532445309_1022920802773320454_n.jpg"
-                        alt="حالة قبل وبعد — تبييض أسنان" class="w-full aspect-square object-cover" loading="lazy" />
-                </div>
-                <div class="rounded-xl overflow-hidden border border-slate-200">
-                    <img src="assets/486299706_1098407172325745_3561766904646662611_n.jpg" alt="حالة قبل وبعد — فينير"
-                        class="w-full aspect-square object-cover" loading="lazy" />
-                </div>
-                <div class="rounded-xl overflow-hidden border border-slate-200 sm:col-span-2 lg:col-span-1">
-                    <img src="assets/486110404_1096513615848434_2367467578629889493_n.jpg"
-                        alt="حالة قبل وبعد — علاج تحفظي" class="w-full aspect-square object-cover" loading="lazy" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--  DOCTOR  -->
-    <section id="doctor" class="py-20 lg:py-28">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-
-                <!-- doctor / clinic branding visual -->
-                <div class="lg:col-span-4 order-1">
-                    <div
-                        class="aspect-square bg-white rounded-2xl overflow-hidden border border-slate-200 p-8 flex items-center justify-center shadow-sm">
-                        <img src="assets/326946801_997392401234725_5495112859786435083_n.jpg"
-                            alt="Ivory Dental Clinic — د. أيمن فاطين" class="w-full h-full object-contain" />
-                    </div>
-                </div>
-
-                <!-- bio -->
-                <div class="lg:col-span-8 order-2 lg:pt-4">
-                    <p class="text-[13px] font-semibold text-teal-600 mb-3">الطبيب المعالج</p>
-                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-1">
-                        د. أيمن فاطين
-                    </h2>
-                    <p class="text-[15px] text-slate-400 font-medium mb-6">أخصائي زراعة وتجميل الأسنان — مؤسس Ivory
-                        Dental Clinic</p>
-
-                    <p class="text-[16px] text-slate-500 leading-[1.8] max-w-[540px] mb-8">
-                        بمارس طب الأسنان من أكتر من ١٥ سنة. حصلت على زمالة الكلية الملكية في إنجلترا
-                        وأنا عضو في الجمعية الأمريكية لزراعة الأسنان. أكتر حاجة بهتم بيها إن المريض يكون
-                        مرتاح ومطمن — من أول ما بيدخل العيادة لحد ما بيخلّص العلاج والمتابعة.
-                    </p>
-
-                    <ul class="space-y-3 text-[14px] text-slate-600 mb-10">
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
-                            زمالة الكلية الملكية لجراحي الأسنان — إنجلترا
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
-                            عضو الجمعية الأمريكية لزراعة الأسنان
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
-                            بيئة معقمة بالكامل حسب معايير مكافحة العدوى
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
-                            متابعة مجانية بعد كل إجراء
-                        </li>
-                    </ul>
-
-                    <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
-                        target="_blank"
-                        class="inline-flex items-center gap-2 text-[15px] font-semibold text-teal-600 hover:text-teal-700 transition-colors group">
-                        احجز موعد كشف
-                        <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--  TESTIMONIALS  -->
-    <section id="reviews" class="py-20 lg:py-28 bg-warm">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-
-            <p class="text-[13px] font-semibold text-teal-600 mb-10 lg:mb-14">آراء مرضى العيادة</p>
-
-            <!-- featured quote -->
-            <blockquote class="mb-14 lg:mb-16">
-                <p
-                    class="text-[1.375rem] sm:text-[1.5rem] lg:text-[1.75rem] font-semibold text-slate-800 leading-[1.55] max-w-3xl">
-                    "الدكتور أيمن عالج وجع ضرس كان مأرقني من شهور.
-                    الجلسة كانت سريعة ومحسيتش بحاجة.
-                    المتابعة اللي بعد كده كانت ممتازة — اتصلوا بيا يطمنوا عليا"
-                </p>
-                <footer class="mt-5 text-[14px]">
-                    <span class="text-slate-700 font-medium">محمد عبدالرحمن</span>
-                    <span class="text-slate-300 mx-1.5">·</span>
-                    <span class="text-slate-400">زراعة أسنان فورية</span>
-                </footer>
-            </blockquote>
-
-            <!-- secondary quotes -->
-            <div class="grid lg:grid-cols-12 gap-10 lg:gap-8">
-                <blockquote class="lg:col-span-7 border-t border-slate-200 pt-8">
-                    <p class="text-[16px] text-slate-600 leading-[1.75] mb-4 max-w-lg">
-                        "عملت فينير ٨ أسنان والنتيجة طبيعية جدًا.
-                        الدكتور اهتم إن اللون والشكل يكونوا متناسبين مع وشي — مش مجرد أبيض وخلاص"
-                    </p>
-                    <footer class="text-[13px]">
-                        <span class="text-slate-600 font-medium">سارة الشريف</span>
-                        <span class="text-slate-300 mx-1.5">·</span>
-                        <span class="text-slate-400">هوليود سمايل</span>
-                    </footer>
-                </blockquote>
-
-                <blockquote class="lg:col-span-5 border-t border-slate-200 pt-8">
-                    <p class="text-[16px] text-slate-600 leading-[1.75] mb-4">
-                        "بخاف جدًا من دكاترة الأسنان بس الجو هنا مريح
-                        والفريق صبور. أول مرة أخلّص جلسة علاج عصب وأنا مرتاحة"
-                    </p>
-                    <footer class="text-[13px]">
-                        <span class="text-slate-600 font-medium">نورهان أحمد</span>
-                        <span class="text-slate-300 mx-1.5">·</span>
-                        <span class="text-slate-400">علاج جذور</span>
-                    </footer>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-
-    <!--  LOCATION & HOURS  -->
-    <section id="location" class="py-20 lg:py-28">
-        <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-
-                <!-- info -->
-                <div class="lg:col-span-5">
-                    <p class="text-[13px] font-semibold text-teal-600 mb-2">العنوان والمواعيد</p>
-                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-10">زوروا
-                        العيادة</h2>
-
-                    <div class="space-y-7 text-[15px]">
-                        <div>
-                            <span
-                                class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">العنوان</span>
-                            <span class="text-slate-700 leading-relaxed block">٣٢ شارع مصطفى النحاس، المنطقة السادسة،
-                                مدينة نصر، القاهرة</span>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">مواعيد
-                                العمل</span>
-                            <span class="text-slate-700">السبت إلى الخميس: ١٢ ظهرًا — ١٠ مساءً</span>
-                            <span class="block text-[13px] text-slate-400 mt-1">الجمعة إجازة</span>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">للحجز
-                                والاستفسار</span>
-                            <a href="tel:+201010963320" dir="ltr"
-                                class="text-slate-700 hover:text-teal-600 transition-colors font-medium">+20 10 1096
-                                3320</a>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">صفحة
-                                الفيسبوك</span>
-                            <a href="https://web.facebook.com/IVORYDentalClinic.Dr.Ayman.Sharif.Fateen/?rdid=GxiiAognVRAo1JZ1"
-                                target="_blank"
-                                class="text-slate-700 hover:text-[#1877F2] transition-colors inline-flex items-center gap-1.5"
-                                dir="ltr">
-                                <i data-lucide="facebook" class="w-4 h-4 text-[#1877F2]"></i>
-                                Ivory Dental Clinic
+                            <a href="#services"
+                                class="text-[14px] text-slate-400 hover:text-slate-600 underline underline-offset-4 decoration-slate-200 hover:decoration-slate-400 transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600">
+                                تصفّح الخدمات
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- map -->
-                <div class="lg:col-span-7">
-                    <div class="rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.38!2d31.3430044!3d30.0545129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f1b6a54bdcd%3A0xe18063a3ee4eb928!2sIvory%20Dental%20clinic%20Dr%20Ayman%20Fateen!5e0!3m2!1sar!2seg!4v1700000000000"
-                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade" title="موقع Ivory Dental Clinic على الخريطة">
-                        </iframe>
+                    <!-- stats strip -->
+                    <div
+                        class="lg:col-span-5 order-2 border-t pt-8 lg:border-t-0 lg:pt-0 lg:border-s lg:ps-10 border-slate-200">
+                        <div class="grid grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-10">
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">+15</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">سنة خبرة في<br
+                                        class="hidden lg:block"> زراعة الأسنان</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">+12K</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">حالة تم علاجها<br
+                                        class="hidden lg:block"> بنجاح</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">3D</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">تصوير مقطعي<br
+                                        class="hidden lg:block"> قبل كل زراعة</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!--  SERVICES  -->
+        <section id="services" class="py-20 lg:py-28 bg-warm scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <div class="mb-12 lg:mb-16">
+                    <p class="text-[13px] font-semibold text-teal-600 mb-2">خدمات العيادة</p>
+                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] text-balance">
+                        نتعامل
+                        مع كل حالة على حدة</h2>
+                </div>
+
+                <div class="border-t border-slate-200/80">
+
+                    <!-- 01 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="crosshair" class="w-8 h-8 text-teal-600 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">زراعة الأسنان الفورية</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                نستخدم أشعة CBCT لتخطيط موضع الزرعة بدقة قبل الجلسة. في أغلب الحالات بيتم تركيب السن
+                                المؤقت في نفس اليوم — بدون جراحة تقليدية وبدون غرز.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 02 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="sparkles" class="w-8 h-8 text-teal-600 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">تبييض وهوليود سمايل</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                قشور خزفية (فينير) بنصممها حسب شكل الوش والأسنان. النتيجة طبيعية — مش أبيض زيادة عن
+                                اللزوم. بنتجنب برد الأسنان المفرط علشان نحافظ عليها.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 03 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="heart-pulse" class="w-8 h-8 text-teal-600 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">علاج الجذور بدون ألم</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                علاج عصب بالمجهر الرقمي — الجلسة في الغالب بتكون واحدة. التخدير الموضعي بيخلي الإجراء
+                                مريح
+                                تمامًا، ومعظم المرضى بيتفاجأوا إنهم مش حاسين بحاجة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="py-8 lg:py-10 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="smile" class="w-8 h-8 text-teal-600 stroke-[1.75]" aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">تقويم الأسنان الشفاف</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                تقويم شفاف غير مرئي — بديل عملي للأسلاك المعدنية، خصوصًا للكبار. بيتشال وقت الأكل
+                                والتنظيف، والنتيجة بتبان بعد أسابيع قليلة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  BEFORE & AFTER — CASE RESULTS  -->
+        <section id="cases" class="py-20 lg:py-28 border-b border-slate-100 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <div class="mb-12 lg:mb-16">
+                    <p class="text-[13px] font-semibold text-teal-600 mb-2">من شغل العيادة</p>
+                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] text-balance">نتائج
+                        حقيقية لحالات حقيقية</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+                    <div class="rounded-xl overflow-hidden border border-slate-200">
+                        <img src="assets/486310911_1097211532445309_1022920802773320454_n.jpg"
+                            alt="حالة قبل وبعد — تبييض أسنان" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" />
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-slate-200">
+                        <img src="assets/486299706_1098407172325745_3561766904646662611_n.jpg"
+                            alt="حالة قبل وبعد — فينير" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" />
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-slate-200 sm:col-span-2 lg:col-span-1">
+                        <img src="assets/486110404_1096513615848434_2367467578629889493_n.jpg"
+                            alt="حالة قبل وبعد — علاج تحفظي" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  DOCTOR  -->
+        <section id="doctor" class="py-20 lg:py-28 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+                    <!-- doctor / clinic branding visual -->
+                    <div class="lg:col-span-4 order-1">
+                        <div
+                            class="aspect-square bg-white rounded-2xl overflow-hidden border border-slate-200 p-8 flex items-center justify-center shadow-sm">
+                            <img src="assets/326946801_997392401234725_5495112859786435083_n.jpg"
+                                alt="Ivory Dental Clinic — د. أيمن فاطين" width="320" height="320"
+                                class="w-full h-full object-contain" />
+                        </div>
+                    </div>
+
+                    <!-- bio -->
+                    <div class="lg:col-span-8 order-2 lg:pt-4">
+                        <p class="text-[13px] font-semibold text-teal-600 mb-3">الطبيب المعالج</p>
+                        <h2
+                            class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-1 text-balance">
+                            د. أيمن فاطين
+                        </h2>
+                        <p class="text-[15px] text-slate-400 font-medium mb-6">أخصائي زراعة وتجميل الأسنان — مؤسس
+                            Ivory&nbsp;Dental&nbsp;Clinic</p>
+
+                        <p class="text-[16px] text-slate-500 leading-[1.8] max-w-[540px] mb-8">
+                            بمارس طب الأسنان من أكتر من ١٥ سنة. حصلت على زمالة الكلية الملكية في إنجلترا
+                            وأنا عضو في الجمعية الأمريكية لزراعة الأسنان. أكتر حاجة بهتم بيها إن المريض يكون
+                            مرتاح ومطمن — من أول ما بيدخل العيادة لحد ما بيخلّص العلاج والمتابعة.
+                        </p>
+
+                        <ul class="space-y-3 text-[14px] text-slate-600 mb-10">
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
+                                زمالة الكلية الملكية لجراحي الأسنان — إنجلترا
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
+                                عضو الجمعية الأمريكية لزراعة الأسنان
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
+                                بيئة معقمة بالكامل حسب معايير مكافحة العدوى
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-teal-500 flex-shrink-0"></span>
+                                متابعة مجانية بعد كل إجراء
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[15px] font-semibold text-teal-600 hover:text-teal-700 transition-colors group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600">
+                            احجز موعد كشف
+                            <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"
+                                aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  TESTIMONIALS  -->
+        <section id="reviews" class="py-20 lg:py-28 bg-warm scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <p class="text-[13px] font-semibold text-teal-600 mb-10 lg:mb-14">آراء مرضى العيادة</p>
+
+                <!-- featured quote -->
+                <blockquote class="mb-14 lg:mb-16">
+                    <p
+                        class="text-[1.375rem] sm:text-[1.5rem] lg:text-[1.75rem] font-semibold text-slate-800 leading-[1.55] max-w-3xl">
+                        “الدكتور أيمن عالج وجع ضرس كان مأرقني من شهور.
+                        الجلسة كانت سريعة ومحسيتش بحاجة.
+                        المتابعة اللي بعد كده كانت ممتازة — اتصلوا بيا يطمنوا عليا”
+                    </p>
+                    <footer class="mt-5 text-[14px]">
+                        <span class="text-slate-700 font-medium">محمد عبدالرحمن</span>
+                        <span class="text-slate-300 mx-1.5">·</span>
+                        <span class="text-slate-400">زراعة أسنان فورية</span>
+                    </footer>
+                </blockquote>
+
+                <!-- secondary quotes -->
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-8">
+                    <blockquote class="lg:col-span-7 border-t border-slate-200 pt-8">
+                        <p class="text-[16px] text-slate-600 leading-[1.75] mb-4 max-w-lg">
+                            “عملت فينير ٨ أسنان والنتيجة طبيعية جدًا.
+                            الدكتور اهتم إن اللون والشكل يكونوا متناسبين مع وشي — مش مجرد أبيض وخلاص”
+                        </p>
+                        <footer class="text-[13px]">
+                            <span class="text-slate-600 font-medium">سارة الشريف</span>
+                            <span class="text-slate-300 mx-1.5">·</span>
+                            <span class="text-slate-400">هوليود سمايل</span>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="lg:col-span-5 border-t border-slate-200 pt-8">
+                        <p class="text-[16px] text-slate-600 leading-[1.75] mb-4">
+                            “بخاف جدًا من دكاترة الأسنان بس الجو هنا مريح
+                            والفريق صبور. أول مرة أخلّص جلسة علاج عصب وأنا مرتاحة”
+                        </p>
+                        <footer class="text-[13px]">
+                            <span class="text-slate-600 font-medium">نورهان أحمد</span>
+                            <span class="text-slate-300 mx-1.5">·</span>
+                            <span class="text-slate-400">علاج جذور</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  LOCATION & HOURS  -->
+        <section id="location" class="py-20 lg:py-28 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+                    <!-- info -->
+                    <div class="lg:col-span-5">
+                        <p class="text-[13px] font-semibold text-teal-600 mb-2">العنوان والمواعيد</p>
+                        <h2
+                            class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-10 text-balance">
+                            زوروا العيادة</h2>
+
+                        <div class="space-y-7 text-[15px]">
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">العنوان</span>
+                                <span class="text-slate-700 leading-relaxed block">٣٢ شارع مصطفى النحاس، المنطقة
+                                    السادسة،
+                                    مدينة نصر، القاهرة</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">مواعيد
+                                    العمل</span>
+                                <span class="text-slate-700">السبت إلى الخميس: ١٢ ظهرًا — ١٠ مساءً</span>
+                                <span class="block text-[13px] text-slate-400 mt-1">الجمعة إجازة</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">للحجز
+                                    والاستفسار</span>
+                                <a href="tel:+201010963320" dir="ltr"
+                                    class="text-slate-700 hover:text-teal-600 transition-colors font-medium rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600">+20&nbsp;10&nbsp;1096&nbsp;3320</a>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">صفحة
+                                    الفيسبوك</span>
+                                <a href="https://web.facebook.com/IVORYDentalClinic.Dr.Ayman.Sharif.Fateen/?rdid=GxiiAognVRAo1JZ1"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="text-slate-700 hover:text-[#1877F2] transition-colors inline-flex items-center gap-1.5 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]"
+                                    dir="ltr">
+                                    <i data-lucide="facebook" class="w-4 h-4 text-[#1877F2]" aria-hidden="true"></i>
+                                    Ivory Dental Clinic
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- map -->
+                    <div class="lg:col-span-7">
+                        <div class="rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.38!2d31.3430044!3d30.0545129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f1b6a54bdcd%3A0xe18063a3ee4eb928!2sIvory%20Dental%20clinic%20Dr%20Ayman%20Fateen!5e0!3m2!1sar!2seg!4v1700000000000"
+                                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="موقع Ivory Dental Clinic على الخريطة">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
     <!--  FOOTER  -->
@@ -458,8 +492,9 @@
                 <span>٣٢ شارع مصطفى النحاس، مدينة نصر، القاهرة</span>
                 <span class="text-slate-200">|</span>
                 <a href="https://web.facebook.com/IVORYDentalClinic.Dr.Ayman.Sharif.Fateen/?rdid=GxiiAognVRAo1JZ1"
-                    target="_blank" class="hover:text-slate-600 inline-flex items-center gap-1.5 transition-colors">
-                    <i data-lucide="facebook" class="w-3.5 h-3.5 text-[#1877F2]"></i>
+                    target="_blank" rel="noopener noreferrer"
+                    class="hover:text-slate-600 inline-flex items-center gap-1.5 transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">
+                    <i data-lucide="facebook" class="w-3.5 h-3.5 text-[#1877F2]" aria-hidden="true"></i>
                     Facebook
                 </a>
             </div>
@@ -469,9 +504,9 @@
 
     <!--  FLOATING WHATSAPP  -->
     <a href="https://wa.me/201010963320?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D9%83%D9%86%D8%AA%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81"
-        target="_blank" aria-label="تواصل عبر واتساب"
-        class="wa-pulse fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ead56] rounded-full flex items-center justify-center shadow-lg transition-colors">
-        <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
+        target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب"
+        class="wa-pulse fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ead56] rounded-full flex items-center justify-center shadow-lg transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40 focus-visible:ring-offset-2">
+        <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24" aria-hidden="true">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
