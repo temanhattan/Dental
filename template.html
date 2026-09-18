@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pearl Dental Clinic — د. ياسمين خليل | مصر الجديدة</title>
+    <meta name="description"
+        content="Pearl Dental Clinic — عيادة د. ياسمين خليل لزراعة وتجميل الأسنان في مصر الجديدة، القاهرة. تركيبات ثابتة، ابتسامة هوليود، حشوات تجميلية، وعلاج اللثة." />
+
+    <!-- Performance: Preconnect & DNS-Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+
+    <!-- Preload Critical LCP Asset -->
+    <link rel="preload" as="image" href="assets/pearl_dental_logo.jpg" fetchpriority="high" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+                    colors: {
+                        warm: '#f8f6f2',
+                        warmDark: '#f0ece6',
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                        },
+                        gold: {
+                            50: '#fffbea',
+                            100: '#fff3c4',
+                            200: '#fce588',
+                            300: '#fadb5f',
+                            400: '#f7c948',
+                            500: '#de911d',
+                            600: '#cb6e17',
+                            700: '#b44d12',
+                            800: '#8d2b0b',
+                            900: '#73200c',
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        @keyframes wa-ring {
+            0% {
+                transform: scale(1);
+                opacity: .45;
+            }
+
+            80% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .wa-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 9999px;
+            background: #25D366;
+            animation: wa-ring 2.2s ease-out infinite;
+            z-index: -1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .wa-pulse::before {
+                animation: none;
+            }
+        }
+
+        /* Performance: content-visibility skips rendering off-screen sections until scrolled */
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 650px;
+        }
+
+        /* Subtle gold accent underline for headings */
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 40%;
+            height: 3px;
+            background: linear-gradient(90deg, #f7c948, #de911d);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-600 antialiased">
+
+    <!--  SKIP LINK  -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:right-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-navy-700 focus:text-white focus:rounded-lg focus:shadow-lg focus:text-[13px] focus:font-semibold focus:outline-none focus:ring-2 focus:ring-navy-800">
+        الانتقال إلى المحتوى الرئيسي
+    </a>
+
+    <!--  HEADER  -->
+    <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+        <div class="max-w-[1200px] mx-auto px-6 lg:px-8 h-[60px] flex items-center justify-between">
+
+            <a href="#"
+                class="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2">
+                <img src="assets/pearl_dental_logo.jpg" alt="Pearl Dental Clinic Logo"
+                    width="40" height="40" fetchpriority="high" decoding="sync" class="h-10 w-10 object-contain rounded-lg" />
+                <div class="leading-tight">
+                    <span class="block text-[15px] font-bold text-slate-800 tracking-tight">Pearl Dental Clinic</span>
+                    <span class="block text-[11px] text-slate-400 -mt-0.5">د. ياسمين خليل — طب وتجميل الأسنان</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-5">
+                <a href="tel:+201234567890"
+                    class="hidden sm:flex items-center gap-1.5 text-[13px] text-slate-400 hover:text-slate-700 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600"
+                    dir="ltr">
+                    <i data-lucide="phone" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                    +20&nbsp;12&nbsp;3456&nbsp;7890
+                </a>
+                <a href="https://wa.me/201234567890?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%D8%A9%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%83%D8%B4%D9%81"
+                    target="_blank" rel="noopener noreferrer"
+                    class="text-[13px] font-semibold text-white bg-navy-700 hover:bg-navy-800 rounded-lg px-4 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2">
+                    احجز موعدك
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!--  MAIN CONTENT  -->
+    <main id="main-content">
+        <!--  HERO  -->
+        <section class="pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-44 lg:pb-28 border-b border-slate-100">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+
+                    <!-- main column -->
+                    <div class="lg:col-span-7 order-1">
+                        <p class="text-[13px] font-semibold text-gold-500 mb-5">
+                            Pearl Dental Clinic — مصر الجديدة، القاهرة
+                        </p>
+
+                        <h1
+                            class="text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-extrabold leading-[1.3] text-slate-900 mb-6 text-balance">
+                            <span class="gold-underline">ابتسامتك</span> تبدأ<br>من عندنا
+                        </h1>
+
+                        <p class="text-[16px] sm:text-[17px] text-slate-500 leading-[1.9] max-w-[520px] mb-10">
+                            د. ياسمين خليل — طبيبة متخصصة في تجميل وتركيبات الأسنان، ابتسامة هوليود، حشوات تجميلية،
+                            وعلاج اللثة المتقدم.
+                            نستقبلكم يوميًا من الأحد إلى الخميس، من ٢ ظهرًا حتى ٩ مساءً.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                            <a href="https://wa.me/201234567890?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%D8%A9%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%83%D8%B4%D9%81"
+                                target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2.5 bg-navy-900 hover:bg-navy-800 text-white text-[15px] font-semibold rounded-lg px-6 py-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-900 focus-visible:ring-offset-2">
+                                <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                احجز كشف عبر واتساب
+                            </a>
+
+                            <a href="#services"
+                                class="text-[14px] text-slate-400 hover:text-slate-600 underline underline-offset-4 decoration-slate-200 hover:decoration-slate-400 transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600">
+                                تصفّح الخدمات
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- stats strip -->
+                    <div
+                        class="lg:col-span-5 order-2 border-t pt-8 lg:border-t-0 lg:pt-0 lg:border-s lg:ps-10 border-slate-200">
+                        <div class="grid grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-10">
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">+10</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">سنوات خبرة في<br
+                                        class="hidden lg:block"> تجميل الأسنان</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">+8K</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">ابتسامة تم<br
+                                        class="hidden lg:block"> تصميمها</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[1.75rem] lg:text-[2rem] font-extrabold text-slate-900 leading-none tabular-nums">100%</span>
+                                <span class="block text-[13px] text-slate-400 mt-1.5 leading-snug">تعقيم شامل<br
+                                        class="hidden lg:block"> حسب المعايير الدولية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  SERVICES  -->
+        <section id="services" class="py-20 lg:py-28 bg-warm scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <div class="mb-12 lg:mb-16">
+                    <p class="text-[13px] font-semibold text-gold-500 mb-2">خدماتنا المتخصصة</p>
+                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] text-balance">
+                        كل ابتسامة ليها حل مختلف</h2>
+                </div>
+
+                <div class="border-t border-slate-200/80">
+
+                    <!-- 01 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="crown" class="w-8 h-8 text-gold-500 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">ابتسامة هوليود والفينير</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                قشور خزفية رقيقة بنصممها ديجيتال قبل التنفيذ. بنراعي تناسق اللون مع لون البشرة
+                                والشكل العام للوش. النتيجة بتكون طبيعية ومريحة — مش مجرد أبيض ناصع.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 02 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="palette" class="w-8 h-8 text-gold-500 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">حشوات تجميلية بلون الأسنان</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                بنستخدم مواد كومبوزيت عالية الجودة بتطابق لون السنّة الأصلي. الحشوة بتكون غير مرئية
+                                تمامًا وبتحافظ على شكل السنّة الطبيعي لسنين طويلة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 03 -->
+                    <div
+                        class="py-8 lg:py-10 border-b border-slate-200/80 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-gold-500 stroke-[1.75]"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">علاج اللثة المتقدم</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                تشخيص وعلاج التهابات اللثة من البداية. بنعمل تنظيف عميق وتقليح جذور بأجهزة
+                                ألتراسونيك — الجلسة سريعة ومريحة والنتيجة بتبان من أول زيارة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="py-8 lg:py-10 grid lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <div class="lg:col-span-1 flex items-center">
+                            <i data-lucide="scan-line" class="w-8 h-8 text-gold-500 stroke-[1.75]" aria-hidden="true"></i>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-[1.125rem] font-bold text-slate-900 leading-snug">تركيبات ثابتة ومتحركة</h3>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <p class="text-[15px] text-slate-500 leading-[1.75] max-w-[560px]">
+                                تيجان زيركون وإيماكس مصنوعة بتقنية CAD/CAM. التركيبة بتتصمم رقمي علشان تكون
+                                مظبوطة ومريحة من أول تركيب — بدون تعديلات كتير.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  BEFORE & AFTER — CASE RESULTS  -->
+        <section id="cases" class="cv-auto py-20 lg:py-28 border-b border-slate-100 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <div class="mb-12 lg:mb-16">
+                    <p class="text-[13px] font-semibold text-gold-500 mb-2">من أعمالنا</p>
+                    <h2 class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] text-balance">نتائج
+                        تتكلم عن نفسها</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+                    <div class="rounded-xl overflow-hidden border border-slate-200">
+                        <img src="assets/case_result_1.jpg"
+                            alt="حالة قبل وبعد — تبييض أسنان" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-slate-200">
+                        <img src="assets/case_result_2.jpg"
+                            alt="حالة قبل وبعد — فينير" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-slate-200 sm:col-span-2 lg:col-span-1">
+                        <img src="assets/case_result_3.jpg"
+                            alt="حالة قبل وبعد — زراعة أسنان" width="400" height="400"
+                            class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  DOCTOR  -->
+        <section id="doctor" class="cv-auto py-20 lg:py-28 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+                    <!-- doctor / clinic branding visual -->
+                    <div class="lg:col-span-4 order-1">
+                        <div
+                            class="aspect-square bg-white rounded-2xl overflow-hidden border border-slate-200 p-8 flex items-center justify-center shadow-sm">
+                            <img src="assets/pearl_dental_logo.jpg"
+                                alt="Pearl Dental Clinic — د. ياسمين خليل" width="320" height="320"
+                                class="w-full h-full object-contain" loading="lazy" decoding="async" />
+                        </div>
+                    </div>
+
+                    <!-- bio -->
+                    <div class="lg:col-span-8 order-2 lg:pt-4">
+                        <p class="text-[13px] font-semibold text-gold-500 mb-3">الطبيبة المعالجة</p>
+                        <h2
+                            class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-1 text-balance">
+                            د. ياسمين خليل
+                        </h2>
+                        <p class="text-[15px] text-slate-400 font-medium mb-6">أخصائية تجميل وتركيبات الأسنان — مؤسسة
+                            Pearl&nbsp;Dental&nbsp;Clinic</p>
+
+                        <p class="text-[16px] text-slate-500 leading-[1.8] max-w-[540px] mb-8">
+                            بدأت رحلتي في طب الأسنان من أكتر من ١٠ سنين. حصلت على ماجستير التركيبات من
+                            جامعة عين شمس ودرّست في أكتر من مؤتمر دولي. بركّز دايمًا على إن المريض يحس
+                            بالراحة — من أول الاستشارة لحد آخر جلسة متابعة.
+                        </p>
+
+                        <ul class="space-y-3 text-[14px] text-slate-600 mb-10">
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-gold-500 flex-shrink-0"></span>
+                                ماجستير التركيبات الثابتة — جامعة عين شمس
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-gold-500 flex-shrink-0"></span>
+                                عضو الجمعية المصرية لطب الأسنان التجميلي
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-gold-500 flex-shrink-0"></span>
+                                دبلومة تصميم الابتسامة الرقمية — DSD
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="w-1 h-1 rounded-full bg-gold-500 flex-shrink-0"></span>
+                                متابعة مجانية لمدة ٦ شهور بعد أي إجراء
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/201234567890?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%D8%A9%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%83%D8%B4%D9%81"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[15px] font-semibold text-navy-700 hover:text-navy-800 transition-colors group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600">
+                            احجز موعد كشف
+                            <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"
+                                aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  TESTIMONIALS  -->
+        <section id="reviews" class="cv-auto py-20 lg:py-28 bg-warm scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+                <p class="text-[13px] font-semibold text-gold-500 mb-10 lg:mb-14">آراء مرضانا</p>
+
+                <!-- featured quote -->
+                <blockquote class="mb-14 lg:mb-16">
+                    <p
+                        class="text-[1.375rem] sm:text-[1.5rem] lg:text-[1.75rem] font-semibold text-slate-800 leading-[1.55] max-w-3xl">
+                        "كنت خايفة أعمل فينير بس الدكتورة ياسمين طمنتني
+                        من أول استشارة. النتيجة فاقت توقعاتي —
+                        ابتسامة طبيعية ومحدش يقدر يفرّق إنها فينير"
+                    </p>
+                    <footer class="mt-5 text-[14px]">
+                        <span class="text-slate-700 font-medium">هدى إبراهيم</span>
+                        <span class="text-slate-300 mx-1.5">·</span>
+                        <span class="text-slate-400">فينير ١٠ أسنان</span>
+                    </footer>
+                </blockquote>
+
+                <!-- secondary quotes -->
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-8">
+                    <blockquote class="lg:col-span-7 border-t border-slate-200 pt-8">
+                        <p class="text-[16px] text-slate-600 leading-[1.75] mb-4 max-w-lg">
+                            "العيادة نضيفة ومنظمة والفريق محترم جدًا.
+                            غيّرت حشوات قديمة بحشوات تجميلية والفرق مذهل —
+                            الأسنان بقت شكلها واحد ومفيش أي تصبّغ"
+                        </p>
+                        <footer class="text-[13px]">
+                            <span class="text-slate-600 font-medium">أحمد وليد</span>
+                            <span class="text-slate-300 mx-1.5">·</span>
+                            <span class="text-slate-400">حشوات تجميلية</span>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="lg:col-span-5 border-t border-slate-200 pt-8">
+                        <p class="text-[16px] text-slate-600 leading-[1.75] mb-4">
+                            "كان عندي مشكلة في اللثة من سنين وأخيرًا لقيت
+                            حد يعالجها صح. الدكتورة شرحتلي كل حاجة
+                            قبل ما تبدأ والألم كان أقل بكتير مما توقعت"
+                        </p>
+                        <footer class="text-[13px]">
+                            <span class="text-slate-600 font-medium">منى السيد</span>
+                            <span class="text-slate-300 mx-1.5">·</span>
+                            <span class="text-slate-400">علاج لثة</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  LOCATION & HOURS  -->
+        <section id="location" class="cv-auto py-20 lg:py-28 scroll-mt-16">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+                    <!-- info -->
+                    <div class="lg:col-span-5">
+                        <p class="text-[13px] font-semibold text-gold-500 mb-2">العنوان والمواعيد</p>
+                        <h2
+                            class="text-[1.625rem] lg:text-[2rem] font-bold text-slate-900 leading-[1.2] mb-10 text-balance">
+                            زوروا العيادة</h2>
+
+                        <div class="space-y-7 text-[15px]">
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">العنوان</span>
+                                <span class="text-slate-700 leading-relaxed block">١٥ شارع بغداد، روكسي،
+                                    مصر الجديدة، القاهرة</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">مواعيد
+                                    العمل</span>
+                                <span class="text-slate-700">الأحد إلى الخميس: ٢ ظهرًا — ٩ مساءً</span>
+                                <span class="block text-[13px] text-slate-400 mt-1">الجمعة والسبت إجازة</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">للحجز
+                                    والاستفسار</span>
+                                <a href="tel:+201234567890" dir="ltr"
+                                    class="text-slate-700 hover:text-navy-700 transition-colors font-medium rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600">+20&nbsp;12&nbsp;3456&nbsp;7890</a>
+                            </div>
+                            <div>
+                                <span
+                                    class="block text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">تابعونا
+                                    على انستجرام</span>
+                                <a href="https://www.instagram.com/"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="text-slate-700 hover:text-[#E4405F] transition-colors inline-flex items-center gap-1.5 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4405F]"
+                                    dir="ltr">
+                                    <i data-lucide="instagram" class="w-4 h-4 text-[#E4405F]" aria-hidden="true"></i>
+                                    @PearlDentalClinic
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- map -->
+                    <div class="lg:col-span-7">
+                        <div class="rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.5!2d31.3250!3d30.0910!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA1JzI3LjYiTiAzMcKwMTknMzAuMCJF!5e0!3m2!1sar!2seg!4v1700000000000"
+                                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="موقع Pearl Dental Clinic على الخريطة">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!--  FOOTER  -->
+    <footer class="border-t border-slate-100 py-8">
+        <div
+            class="max-w-[1200px] mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-slate-400">
+            <span>© 2026 Pearl Dental Clinic — د. ياسمين خليل</span>
+            <div class="flex items-center gap-4">
+                <span>١٥ شارع بغداد، مصر الجديدة، القاهرة</span>
+                <span class="text-slate-200">|</span>
+                <a href="https://www.instagram.com/"
+                    target="_blank" rel="noopener noreferrer"
+                    class="hover:text-slate-600 inline-flex items-center gap-1.5 transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5 text-[#E4405F]" aria-hidden="true"></i>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  FLOATING WHATSAPP  -->
+    <a href="https://wa.me/201234567890?text=%D9%85%D8%B3%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%D8%A9%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%83%D8%B4%D9%81"
+        target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب"
+        class="wa-pulse fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ead56] rounded-full flex items-center justify-center shadow-lg transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40 focus-visible:ring-offset-2">
+        <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Non-blocking Deferred Scripts -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
